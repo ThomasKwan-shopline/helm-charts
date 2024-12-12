@@ -8,6 +8,7 @@ apiVersion: batch/v1
 kind: CronJob
 {{- end }}
 metadata:
+  testWorkflowlib: {{ include "workflowlib.demo" . | quote }}
   name: {{ .Values.name }}
   namespace: {{ .Release.Namespace }}
   labels:
